@@ -269,7 +269,7 @@ public class TurnsOfWar implements com.github.msx80.omicron.api.Game {
 							}
 					  }
 				} 
-				else if ( mouse.btnp(0) && Game.selected!=null && Game.targets!=null && (Game.selected.team == Game.currentTeam) ) 
+				else if ( mouse.btnp(0) && Game.selected!=null && (mouse.x()<=176) && Game.targets!=null && (Game.selected.team == Game.currentTeam) ) 
 				{
 					if (action != null) {
 						Event e = action.exec(Game.selected, tx, ty);
