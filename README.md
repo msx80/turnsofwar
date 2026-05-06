@@ -1,2 +1,43 @@
-# turnsofwar
-A turn based strategy game
+![Build](https://github.com/msx80/turnsofwar/workflows/Build/badge.svg)
+[![Contributors](https://img.shields.io/github/contributors/msx80/turnsofwar.svg)](https://github.com/msx80/turnsofwar/graphs/contributors)
+![GitHub Release](https://img.shields.io/github/v/release/msx80/turnsofwar)
+![F-Droid Version](https://img.shields.io/f-droid/v/com.github.msx80.TurnsOfWar)
+![GitHub Discussions](https://img.shields.io/github/discussions/msx80/turnsofwar)
+[![Powered by Omicron](https://img.shields.io/badge/Powered_by-Omicron-Green)](https://github.com/msx80/Omicron)
+
+# Turns Of War
+
+*A pixel art styled turn based strategy game!*
+
+![Screenshot](https://github.com/msx80/turnsofwar/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png?raw=true)
+
+Fight over 30 carefully hand-designed challanging levels! Take command of your units, each with its own abilities and powers! Cast powerful spells and effects! Get captured by the riveting story arch connecting the levels! (ok the story is actually not that good, it's just there to avoid having sparse unconnected levels, but still!)
+
+  - Game design/idea/coding: msx80
+  - Sound and Music by: Fubuki
+  - Most pixel art by: [Stavros](https://twitter.com/eliacoan)
+
+Powered by [Omicron](https://github.com/msx80/Omicron)
+A porting of my [TIC-80 Game Turns of War](https://tic80.com/play?cart=833) to Omicron (but with a lot of new stuff!)
+
+![Screenshot](https://github.com/msx80/turnsofwar/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png?raw=true)
+
+# How to run 
+
+## On android:
+
+Install the APK from the [latest release](https://github.com/msx80/turnsofwar/releases/latest).
+
+## On desktop: 
+
+Download the executable jar from the [latest release](https://github.com/msx80/turnsofwar/releases/latest).
+
+![Screenshot](https://github.com/msx80/turnsofwar/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true)
+
+## Building
+
+Please take a look at the [github workflow](https://github.com/msx80/turnsofwar/blob/main/.github/workflows/release.yml), should be pretty self explanatory.
+
+![Screenshot](https://github.com/msx80/turnsofwar/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png?raw=true)
+
+
