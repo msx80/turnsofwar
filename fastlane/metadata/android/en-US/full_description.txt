@@ -1,0 +1,5 @@
+A turn based strategy game with a pixel art style! Over 30 levels and 30 unit types!
+
+Sound and music by Fubuki
+Most graphics by: Stavros
+

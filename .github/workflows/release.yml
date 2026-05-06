@@ -1,0 +1,93 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+        contents: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: 'true'
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: 17
+        distribution: 'temurin'
+    - name: Get release version
+      run: |
+        VERSION="${GITHUB_REF#refs/tags/v}"
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+    - name: Read version
+      run: |
+        cd turnsofwar
+        echo "GITHUB_DDVER=$(mvn -q org.apache.maven.plugins:maven-help-plugin:3.1.1:evaluate -Dexpression=project.version -DforceStdout)" >> $GITHUB_ENV
+    - name: Build app
+      run: |
+        cd turnsofwar
+        mvn --batch-mode clean install package
+    - name: Deploy cartridge
+      uses: actions/upload-artifact@v4
+      with:
+        name: 'turnsofwar.omicron'
+        path: turnsofwar/turnsofwar.omicron
+    - name: Build desktop
+      run: |
+        cd Omicron/wrappers/desktop-wrapper
+        ./mvnw --batch-mode -Dcartridge.artifactId=turnsofwar -Dcartridge.groupId=com.github.msx80.omicron -Dcartridge.version=$GITHUB_DDVER clean package
+    - name: Deploy Desktop
+      uses: actions/upload-artifact@v4
+      with:
+        name: 'turnsofwar-desktop.jar'
+        path: Omicron/wrappers/desktop-wrapper/target/turnsofwar-desktop.jar
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+    - name: Install android sdk packages        
+      run: |
+        sdkmanager "build-tools;33.0.2" "platforms;android-26"        
+    - name: Build android
+      run: |
+        cd Omicron/wrappers/android-wrapper
+        ./gradlew -Pcartridge.artifactId=turnsofwar -Pcartridge.groupId=com.github.msx80.omicron -Pcartridge.version=$GITHUB_DDVER clean assembleRelease
+    - name: Deploy Unsigned Apk
+      uses: actions/upload-artifact@v4
+      with:
+        name: 'turnsofwar-unsigned.apk'
+        path: Omicron/wrappers/android-wrapper/app/build/outputs/apk/release/app-release-unsigned.apk
+    - uses: ilharp/sign-android-release@v1
+      name: Sign app APK
+      id: sign_app
+      with:
+        releaseDir: Omicron/wrappers/android-wrapper/app/build/outputs/apk/release
+        signingKey: ${{ secrets.SIGNING_KEY }}
+        keyAlias: ${{ secrets.SIGNING_ALIAS }}
+        keyStorePassword: ${{ secrets.SIGNING_PASSWORD }}
+        buildToolsVersion: 33.0.2
+    - name: Rename apk
+      run: |
+        mv -v ${{steps.sign_app.outputs.signedFile}} turnsofwar.apk
+    - uses: actions/upload-artifact@v4
+      with:
+        name: turnsofwar.apk
+        path: turnsofwar.apk          
+    - name: Upload Release
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        draft: false
+        prerelease: false
+        title: "Release ${{ env.VERSION }}"
+        files: |
+          LICENSE
+          turnsofwar/turnsofwar.omicron
+          turnsofwar.apk
+          Omicron/wrappers/desktop-wrapper/target/turnsofwar-desktop.jar
+          
