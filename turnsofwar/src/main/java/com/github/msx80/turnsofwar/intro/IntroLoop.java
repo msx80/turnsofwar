@@ -20,7 +20,8 @@ public class IntroLoop implements Loop {
 		wm = new WidgetManager(240, 136);
 		int nl = Game.nextUnlockedLevel();
 		
-		for (int i = 0; i < Levels.ALL.size() -1 ; i++) {
+		int max = Levels.ALL.length -2;
+		for (int i = 0; i < max ; i++) {
 			int tx = i % 9;
 			int ty = i / 9;
 			int x = tx*20 + 30;
@@ -33,10 +34,10 @@ public class IntroLoop implements Loop {
 				
 				if(locked)
 				{
-					if(lev == 35) { 
+					if(lev == max-1) { 
 						knock++;
 						if (knock >= 10) {
-							Game.unlockLevel(35);
+							Game.unlockLevel(max-1);
 							throw new RuntimeException("Knock knock.. who's there?");
 						}
 					}

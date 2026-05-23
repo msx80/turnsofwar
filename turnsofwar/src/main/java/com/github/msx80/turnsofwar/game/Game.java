@@ -61,7 +61,7 @@ public class Game {
     	anim = null;
     	dialog = null;
     	radipix = null;
-        Level level = Levels.ALL.get(levelIndex);
+        Level level = Levels.ALL[levelIndex];
         lvlNum = levelIndex;
         currentTeam = 0;
         turnCount = 1;

@@ -25,4 +25,24 @@ public class Level {
         this.win = win;
     }
     
+    public Level addTrap(TrapAction trap) {
+		traps.add(trap);
+		return this;
+	}
+    
+    public Level addGood(Units type, int x, int y) {
+		good.add(new UnitSpawn(type, x, y));
+		return this;
+	}
+	
+	public Level addEvil(Units type, int x, int y) {
+		evil.add(new UnitSpawn(type, x, y));
+		return this;
+	}
+
+	public Level setTurner(Runnable r) {
+		this.turner = r;
+		return this;
+	}
+    
 }
