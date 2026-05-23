@@ -193,7 +193,7 @@ public class Levels {
             }
         {
 
-            Level l15 = new Level(132, 26, new String[]{
+            Level vv = new Level(132, 26, new String[]{
             		"## ROCK AND ROLL", "", 
             		"There's a gorge full of enemies!",
             		"We are outnumbered! Our only hope",
@@ -203,23 +203,23 @@ public class Levels {
             		"control stone itself!","",
             		"Let's try and block their",
             		"advancement!"}, Game::noMoreEnemies);
-            l15.good.add(new Level.UnitSpawn(Units.STONECASTER, 0, 2));
-            l15.good.add(new Level.UnitSpawn(Units.ELF, 1, 3));
-            l15.good.add(new Level.UnitSpawn(Units.ELF, 2, 2));
-            l15.good.add(new Level.UnitSpawn(Units.CAPTAIN, 1, 4));
-            l15.good.add(new Level.UnitSpawn(Units.SLUGDO, 2, 3));
+            vv.good.add(new Level.UnitSpawn(Units.STONECASTER, 0, 2));
+            vv.good.add(new Level.UnitSpawn(Units.ELF, 1, 3));
+            vv.good.add(new Level.UnitSpawn(Units.ELF, 2, 2));
+            vv.good.add(new Level.UnitSpawn(Units.CAPTAIN, 1, 4));
+            vv.good.add(new Level.UnitSpawn(Units.SLUGDO, 2, 3));
             
-            l15.evil.add(new Level.UnitSpawn(Units.GOBLIN, 9, 4));
-            l15.evil.add(new Level.UnitSpawn(Units.BRUTE, 8, 4));
-            l15.evil.add(new Level.UnitSpawn(Units.BRUTE, 9, 3));
-            l15.evil.add(new Level.UnitSpawn(Units.RAT, 9, 2));
-            l15.evil.add(new Level.UnitSpawn(Units.RAT, 8, 2));
-            l15.evil.add(new Level.UnitSpawn(Units.BRUTE, 7, 7));
-            ALL.add(l15);
+            vv.evil.add(new Level.UnitSpawn(Units.GOBLIN, 9, 4));
+            vv.evil.add(new Level.UnitSpawn(Units.BRUTE, 8, 4));
+            vv.evil.add(new Level.UnitSpawn(Units.BRUTE, 9, 3));
+            vv.evil.add(new Level.UnitSpawn(Units.RAT, 9, 2));
+            vv.evil.add(new Level.UnitSpawn(Units.RAT, 8, 2));
+            vv.evil.add(new Level.UnitSpawn(Units.BRUTE, 7, 7));
+            ALL.add(vv);
             }
         {
 
-            Level l15 = new Level(144, 26, new String[]{
+            Level lxx = new Level(144, 26, new String[]{
             		"## BLOODTHIRST", "", 
             		"We're amost back at the village.",
             		"But in this land there's an ancient",
@@ -228,7 +228,7 @@ public class Levels {
             		"kind of monsters you can find."
             		}, Game::noMoreEnemies);
             
-            ALL.add(l15);
+            ALL.add(lxx);
             }
             
         // #16 BACK AT THE VILLAGE
@@ -349,7 +349,8 @@ public class Levels {
         {
        	 Level l15 = new Level(156, 26, new String[]{
             		"## CENTAUR FOREST", "", 
-            		"BLA."
+            		"We need to cross a forest.", "We carefully step inside and", "are soon met with the sound", "of galloping horseshoe.",
+            		"", "But those are no horses!"
             		}, Game::noMoreEnemies);
             
             ALL.add(l15);
@@ -654,7 +655,7 @@ public class Levels {
         ALL.add(l31);
         
         
-        Level sec = new Level(180, 26, new String[]{"## LOL Secrare et Level!", "", "Good, good.", "You found the secret level", "you smart person!", "", "Have fun!"}, () -> false);
+        Level sec = new Level(180, 26, new String[]{"## LOL Secret Level!", "", "Good, good.", "You found the secret level", "you smart person!", "", "Have fun!"}, () -> false);
         sec.traps.add(new TileTrap(10,6, () -> {
         	
         	
