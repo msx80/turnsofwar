@@ -450,7 +450,10 @@ public class Levels {
         ALL.add(l27);
 
         // #28 WITCHY WITCH
-        Level l28 = new Level(36, 26, new String[]{"## WITCHY WITCH", "", "The witch joins the battle.", "Sure she'll be useful, but", "you're not sure you like her.", "", "She need to reach a magical", "well where she can perform a", "divination and locate the", "monsters source.", "", "We're kind of surrounded here,", "Power up those elves and", "resist the assault!"}, Game::noMoreEnemies);
+        Level l28 = new Level(36, 26, new String[]{"## WITCHY WITCH", "", "The witch joins the battle.", "Sure she'll be useful, but", "you're not sure you like her.", "", "She need to reach a magical", "well where she can perform a", "divination and locate the", "monsters source.", "", "We're kind of surrounded here,", "Power up those elves and", "resist the assault!"}, 
+        		Game::noMoreEnemies);
+        
+       
         l28.good.add(new Level.UnitSpawn(Units.KING, 0, 0));
         l28.good.add(new Level.UnitSpawn(Units.ELF, 1, 0));
         l28.good.add(new Level.UnitSpawn(Units.SOLDIER, 1, 2));
@@ -467,7 +470,7 @@ public class Levels {
         l28.evil.add(new Level.UnitSpawn(Units.GOBLIN, 7, 3));
         l28.evil.add(new Level.UnitSpawn(Units.GOBLIN, 5, 6));
         l28.evil.add(new Level.UnitSpawn(Units.SNAKE, 7, 4));
-        ALL.add(l28);
+         ALL.add(l28);
 
         // #29 THE MAGICAL WELL
         Level l29 = new Level(48, 26, new String[]{"## THE MAGICAL WELL", "", "We reached the well, move", "the witch nearby to perform", "the ritual!", "", "Looks like the forces of", "Evil got wind of our plans", "becouse monsters are", "literally pouring in!"}, 
@@ -480,6 +483,14 @@ public class Levels {
         l29.good.add(new Level.UnitSpawn(Units.CAPTAIN, 1, 1));
         l29.good.add(new Level.UnitSpawn(Units.WITCH, 0, 1));
         l29.evil.add(new Level.UnitSpawn(Units.BRUTE, 8, 7));
+        l29.traps.add(new ColumnTrap(4, () -> {
+            Game.showDialog(List.of(
+            		"Careful.. ","Only the witch has the ability", 
+            		"to handle the power of the",
+            		"magical well!", "", "Any other unit will just unleash", "the magic and destroy everything!"), null, DialogType.POPUP);
+            return null;
+        }));
+
         l29.turner = () -> {
         	List<Unit> toAdd = new ArrayList<Unit>();
         	
