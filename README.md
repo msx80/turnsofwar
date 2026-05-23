@@ -36,7 +36,7 @@ Download the executable jar from the [latest release](https://github.com/msx80/t
 
 ## Building
 
-Please take a look at the [github workflow](https://github.com/msx80/turnsofwar/blob/main/.github/workflows/release.yml), should be pretty self explanatory.
+Please take a look at the [github workflow](https://github.com/msx80/turnsofwar/blob/main/.github/workflows/release.yml), should be pretty self explanatory. Otherwise, feel free to ask in the Discussions.
 
 ![Screenshot](https://github.com/msx80/turnsofwar/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png?raw=true)
 
