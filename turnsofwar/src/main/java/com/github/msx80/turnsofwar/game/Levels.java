@@ -3,6 +3,7 @@ package com.github.msx80.turnsofwar.game;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.github.msx80.turnsofwar.animations.Animation;
 import com.github.msx80.turnsofwar.animations.AnimationFactory;
@@ -517,7 +518,7 @@ public class Levels {
             		killAllAnim.setOnBegin(() -> { UtilsToCleanup.sfx(11);});
             		killAllAnim.setOnEnd(() -> {
             			// actually remove the units
-            			Game.units.stream().filter(Unit::isEvil).toList().forEach(Game::removeUnit);
+            			Game.units.stream().filter(Unit::isEvil).collect(Collectors.toList()).forEach(Game::removeUnit);
             			// perform win
             			Game.doWin();
             		});
