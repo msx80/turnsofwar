@@ -13,6 +13,7 @@ import com.github.msx80.turnsofwar.game.UtilsToCleanup;
 public class IntroLoop implements Loop {
 	
 	WidgetManager wm;
+	int knock = 0;
 	
 	public void init()
 	{
@@ -32,6 +33,14 @@ public class IntroLoop implements Loop {
 				
 				if(locked)
 				{
+					if(lev == 35) { 
+						knock++;
+						if (knock >= 10) {
+							Game.unlockLevel(35);
+							throw new RuntimeException("Knock knock.. who's there?");
+						}
+					}
+					else knock = 0;
 					
 				}
 				else
