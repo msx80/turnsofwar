@@ -68,7 +68,7 @@ public class IntroLoop implements Loop {
 		
 		// UtilsToCleanup.printBig("Choose a LEVEL:", 220, 50, 15, Align.CENTER);
 		TextDrawerVariable.DEFAULT.print("Choose a LEVEL:", 120, 54, Align.CENTER);
-		UtilsToCleanup.printBig("Ver 1.1  -  git:"+TurnsOfWar.buildId, 2, 130, 3);
+		UtilsToCleanup.printBig(TurnsOfWar.buildId, 2, 130, 3);
 		wm.draw();
 	}
 
