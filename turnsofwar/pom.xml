@@ -3,7 +3,7 @@
   <groupId>com.github.msx80.omicron</groupId>
   <artifactId>turnsofwar</artifactId>
  <!-- NOTE: keep Major and Minor version at 0 because Incremental is used to derive versionCode for android -->	
-	<version>0.0.1</version>
+	<version>0.0.3</version>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
