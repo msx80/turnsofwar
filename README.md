@@ -1,7 +1,7 @@
 ![Build](https://github.com/msx80/turnsofwar/workflows/Build/badge.svg)
 [![Contributors](https://img.shields.io/github/contributors/msx80/turnsofwar.svg)](https://github.com/msx80/turnsofwar/graphs/contributors)
 ![GitHub Release](https://img.shields.io/github/v/release/msx80/turnsofwar)
-![F-Droid Version](https://img.shields.io/f-droid/v/com.github.msx80.TurnsOfWar)
+![F-Droid Version](https://img.shields.io/f-droid/v/com.github.msx80.turnsofwar)
 ![GitHub Discussions](https://img.shields.io/github/discussions/msx80/turnsofwar)
 [![Powered by Omicron](https://img.shields.io/badge/Powered_by-Omicron-Green)](https://github.com/msx80/Omicron)
 
