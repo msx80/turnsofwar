@@ -40,7 +40,7 @@ import com.github.msx80.turnsofwar.ui.Tooltip;
  * V migliorare tileset
  * V Pagina iniziale di scelta livello
  * V gestione angoli tileset
- * - finalizzare bene i livelli
+ * V finalizzare bene i livelli
  * V traps
  * V Livello coi due arcieri: gli scheletri stanno li davanti e non fanno il giro?? su TIC80 fanno il giro
  *   V Rifare qdistToNearestEnemyAStart
@@ -66,7 +66,9 @@ public class TurnsOfWar implements com.github.msx80.omicron.api.Game {
 
 	public static final SpriteSheet UNIT_SPRITES = new SpriteSheet(16, 16, 8);
 	public static final SpriteSheet ICONS_SPRITES = new SpriteSheet(8, 8, 16);
+	public static final int UNIT_SHEET = 1;
 	public static final int ICON_SHEET = 3;
+	
 	public static TextDrawerVariable TD;
 	public static TileMap globalMap;
 	
@@ -111,7 +113,7 @@ public class TurnsOfWar implements com.github.msx80.omicron.api.Game {
 
 	    UtilsToCleanup.printBig(u.type.name, x, y, 15);
 	    
-	    TurnsOfWar.UNIT_SPRITES.draw(1, x, y+8, u.type.spr, 0,0);
+	    TurnsOfWar.UNIT_SPRITES.draw(TurnsOfWar.UNIT_SHEET, x, y+8, u.type.spr, 0,0);
 	    
 	    // 2. Stats (HP, Attack, Range)
 	    if (u.hp > 0) {
@@ -379,14 +381,14 @@ public class TurnsOfWar implements com.github.msx80.omicron.api.Game {
 		float ax = u.ax;
 		float ay = u.ay;
 
-		// saltelli
+		// little jumps
 		if (u == Game.selected && Game.anim == null && Game.targets!=null && Game.dialog==null && u.team == 0)
 		{
 		  ay = (float) (-Math.abs(Math.sin(Game.jumpt/10f))*3f);
 		  ax = 0;
 		}
 		
-	  // icone effetti 
+	  // effects icons
 	  int dx = (7 * u.eff.size()) / 2; 
 	  for (Effects e : u.eff.keySet()) {
 		  dx = dx-7;
@@ -395,7 +397,7 @@ public class TurnsOfWar implements com.github.msx80.omicron.api.Game {
 	  
 	  int dir = 0;
 	  if (u.team == 1)  dir = 1;
-	  UNIT_SPRITES.draw(1, Math.round(u.x*16+ax),Math.round(u.y*16+ay), u.type.spr , 0, dir);
+	  UNIT_SPRITES.draw(TurnsOfWar.UNIT_SHEET, Math.round(u.x*16+ax),Math.round(u.y*16+ay), u.type.spr , 0, dir);
 
 	  String tp = u.type.name;
 	  if(u.hp > 0)

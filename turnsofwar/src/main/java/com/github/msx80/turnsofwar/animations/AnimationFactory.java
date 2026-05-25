@@ -215,7 +215,7 @@ public class AnimationFactory {
 				  int dir =  (uu.team == 1) ? 1:0;
 				  
 				  //spr(uu.t.spr,16*(uu.x+perc*dx),16*(uu.y+perc*dy),uu.t.bg or 14,1,dir,0,2,2)
-				  TurnsOfWar.UNIT_SPRITES.draw(1, (int)Math.round(16*(uu.x+perc*dx)),(int) Math.round(16*(uu.y+perc*dy)), uu.type.spr , 0, dir);
+				  TurnsOfWar.UNIT_SPRITES.draw(TurnsOfWar.UNIT_SHEET, (int)Math.round(16*(uu.x+perc*dx)),(int) Math.round(16*(uu.y+perc*dy)), uu.type.spr , 0, dir);
 				},
 				30,
 				EasingFunctions.LINEAR,
@@ -251,7 +251,7 @@ public class AnimationFactory {
 		Animation a = new Animation(
 				( perc, time) -> {
 					Sys.color(Colors.from(255,255,255, (int) (perc*255)));
-				  TurnsOfWar.UNIT_SPRITES.draw(1, c.x*16,c.y*16, unittype.spr , 0, good ? 0 : 1);
+				  TurnsOfWar.UNIT_SPRITES.draw(TurnsOfWar.UNIT_SHEET, c.x*16,c.y*16, unittype.spr , 0, good ? 0 : 1);
 				  Sys.color(Colors.WHITE);
 				},
 				40,
@@ -267,7 +267,7 @@ public class AnimationFactory {
 				( perc, time) -> {
 					c.ax = 1000;
 					Sys.color(Colors.from(255,255,255, 255 - (int) (perc*255)));
-					TurnsOfWar.UNIT_SPRITES.draw(1, c.x*16,c.y*16, c.type.spr , 0, c.team == 0 ? 0 : 1);
+					TurnsOfWar.UNIT_SPRITES.draw(TurnsOfWar.UNIT_SHEET, c.x*16,c.y*16, c.type.spr , 0, c.team == 0 ? 0 : 1);
 					Sys.color(Colors.WHITE);
 				},
 				60,
