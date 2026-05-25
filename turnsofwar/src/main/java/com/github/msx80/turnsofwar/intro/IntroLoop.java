@@ -38,7 +38,7 @@ public class IntroLoop implements Loop {
 						knock++;
 						if (knock >= 10) {
 							Game.unlockLevel(max-1);
-							throw new RuntimeException("Knock knock.. who's there?");
+							//throw new RuntimeException("Knock knock.. who's there?");
 						}
 					}
 					else knock = 0;
