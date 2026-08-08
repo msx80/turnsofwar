@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.msx80.turnsofwar</id>
+  
+  <name>Turns Of War</name>
+  <summary>A pixelart styled turn based strategy game</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <releases>
+    <release version="0.0.3" date="2025-25-05" />
+  </releases>  
+  <developer id="io.github.msx80">
+    <name>msx80</name>
+  </developer>  
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  
+  <url type="bugtracker">https://github.com/msx80/turnsofwar/issues</url>
+  <url type="homepage">https://github.com/msx80/turnsofwar</url>
+  <url type="donation">https://www.paypal.me/msx80</url>
+  <url type="contact">https://livellosegreto.it/@msx</url>
+  <url type="help">https://github.com/msx80/turnsofwar/discussions</url>
+  <url type="contribute">https://github.com/msx80/turnsofwar</url>
+  <url type="vcs-browser">https://github.com/msx80/turnsofwar</url>
+  
+  <description>
+    <p>
+      A turn based strategy game with a pixel art style! Over 30 levels and 30 unit types!
+    </p> 
+    <p>
+      The game is based on the Omicron java game engine. Runs on Android, Linux, Windows and on the Browser.
+    </p>     
+    <p>
+      Most graphics by: Stavros - Sound and music by: Fubuki
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">io.github.msx80.turnsofwar.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The game main window, showing a soldier.</caption>
+      <image>https://raw.githubusercontent.com/msx80/turnsofwar/refs/tags/v0.0.3/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A gameplay screenshot, showing a desertic map.</caption>
+      <image>https://raw.githubusercontent.com/msx80/turnsofwar/refs/tags/v0.0.3/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A water map with many units.</caption>
+      <image>https://raw.githubusercontent.com/msx80/turnsofwar/refs/tags/v0.0.3/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="violence-fantasy">moderate</content_attribute>
+    <content_attribute id="language-humor">mild</content_attribute>
+  </content_rating>
+
+</component>

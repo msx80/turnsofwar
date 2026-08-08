@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TurnsOfWar
+Comment=A turn based strategy game
+Exec=turnsofwarLauncher
+Icon=io.github.msx80.turnsofwar
+Terminal=false
+Categories=Game;
