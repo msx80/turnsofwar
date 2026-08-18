@@ -30,11 +30,16 @@ A porting of my [TIC-80 Game Turns of War](https://tic80.com/play?cart=833) to O
 
 ## On android:
 
-Install the APK from the [latest release](https://github.com/msx80/turnsofwar/releases/latest).
+You can either 
+
+ - install the APK from the [latest release](https://github.com/msx80/turnsofwar/releases/latest) OR
+ - Install from the [F-Droid app store](https://f-droid.org/packages/com.github.msx80.turnsofwar/)
 
 ## On desktop: 
 
-Download the executable jar from the [latest release](https://github.com/msx80/turnsofwar/releases/latest).
+Download the executable jar from the [latest release](https://github.com/msx80/turnsofwar/releases/latest). 
+
+Requires a java runtime on the system.
 
 ![Screenshot](https://github.com/msx80/turnsofwar/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true)
 
