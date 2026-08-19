@@ -8,7 +8,7 @@
 [<img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Get_it_on_F-Droid_%28material_design%29.svg"
      alt="Get it on F-Droid"
      height="80">](https://f-droid.org/packages/com.github.msx80.turnsofwar/)
-
+[<img height='80' alt='Get it on Flathub' src='https://flathub.org/api/badge?svg&locale=en'/>](https://flathub.org/apps/io.github.msx80.turnsofwar)
 # Turns Of War
 
 *A pixel art styled turn based strategy game!*
@@ -37,9 +37,9 @@ You can either
 
 ## On desktop: 
 
-Download the executable jar from the [latest release](https://github.com/msx80/turnsofwar/releases/latest). 
+If you're on linux, you can install the game from [FlatHub](https://flathub.org/apps/io.github.msx80.turnsofwar)
 
-Requires a java runtime on the system.
+For any system with a java runtime, download the executable jar from the [latest release](https://github.com/msx80/turnsofwar/releases/latest). 
 
 ![Screenshot](https://github.com/msx80/turnsofwar/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true)
 
