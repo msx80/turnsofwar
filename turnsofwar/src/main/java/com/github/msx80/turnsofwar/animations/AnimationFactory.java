@@ -137,7 +137,7 @@ public class AnimationFactory {
         Animation lunge = new Animation((perc, time) -> {
             uu.ax = (float)(perc * 14d * dx);
             uu.ay = (float)(perc * 14d * dy);
-        }, 30, EasingFunctions.BACK_IN, () -> UtilsToCleanup.sfx(0));
+        }, 30, EasingFunctions.BACK_IN, () -> UtilsToCleanup.sfx(12));
 
         IAnimation returnAndDamage = Animation.parallel(
             makeUnitAnim(uu, (perc, time) -> {
@@ -159,7 +159,7 @@ public class AnimationFactory {
         IAnimation bombFly = new Animation((perc, time) -> {
         	TurnsOfWar.ICONS_SPRITES.draw(TurnsOfWar.ICON_SHEET, (int)(16 * (uSource.x + perc * dx) + 4), (int)(16 * (uSource.y + perc * dy) + 4),48,0,0);
         }, 30, EasingFunctions.LINEAR, null)
-        		.setOnBegin(() -> { UtilsToCleanup.sfx(0); });
+        		.setOnBegin(() -> { UtilsToCleanup.sfx(12); });
 
         // 2. Parallel explosions for all targets
         IAnimation explosions = null;
@@ -192,7 +192,7 @@ public class AnimationFactory {
 					,
 					30,
 					EasingFunctions.LINEAR, null
-				).setOnBegin(() -> { UtilsToCleanup.sfx(0); }),
+				).setOnBegin(() -> { UtilsToCleanup.sfx(12); }),
 				Animation.parallel(makeShakeAnim(u2), 
 						Animation.parallel(
 								makeParticleAnim(u2.x*16+8, u2.y*16+8, Colors.CRIMSON),

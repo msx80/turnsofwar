@@ -91,7 +91,7 @@ public class Game {
         recalcAreaEffects();
         
         showDialog(Arrays.asList(level.intro), null, DialogType.START);
-        UtilsToCleanup.music((levelIndex + 1) % 2);
+        UtilsToCleanup.music((levelIndex + 1) % 2 == 0 ? 4 : 1);
     }
     
     
