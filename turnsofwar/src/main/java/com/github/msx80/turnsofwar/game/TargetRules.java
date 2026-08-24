@@ -41,9 +41,5 @@ public class TargetRules {
 
     public static final TargetRule NONE = (unit, target, x, y) -> false;
 
-    // --- Complex Rule Combinations (Optional) ---
-    
-    // Example: To attack, a target must be an ENEMY AND within RANGE
-    public static final TargetRule ATTACKABLE_ENEMY = (unit, target, x, y) -> 
-        ENEMY.check(unit, target, x, y) && IN_RANGE.check(unit, target, x, y);
+
 }

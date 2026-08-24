@@ -15,7 +15,7 @@ public class IntroLoop implements Loop {
 	WidgetManager wm;
 	int knock = 0;
 	
-	public void init()
+	public IntroLoop()
 	{
 		wm = new WidgetManager(240, 136);
 		int nl = Game.nextUnlockedLevel();
@@ -53,6 +53,7 @@ public class IntroLoop implements Loop {
 			
 			wm.add(b, x, y);		
 		}
+		Sys.music(3, 0.5f, false);
 	}
 
 	

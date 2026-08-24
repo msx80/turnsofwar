@@ -13,7 +13,12 @@ import com.github.msx80.turnsofwar.ui.DialogType;
 public class Levels {
     public static final Level[] ALL = new Level[] {   
    
-    
+	/*
+	 * Note: in the porting i enabled units definition directly in the map.
+	 * But i haven't moved all unit from here to the map because it's a pain in the ass and i'm lazy
+	 * This is the reason why some are defined here and some on the map. 
+	 * 
+	 */
     
     	new Level(12, 17, new String[]{"## TUTORIAL: MOVING", "", "Help the Farmer reach the", "other side of the map", "", "The yellow circles show", 
         		"where you can move."}, () -> Game.unitInTargetArea())

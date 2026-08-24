@@ -26,6 +26,7 @@ import com.github.msx80.turnsofwar.game.Unit;
 import com.github.msx80.turnsofwar.game.UtilsToCleanup;
 import com.github.msx80.turnsofwar.intro.IntroLoop;
 import com.github.msx80.turnsofwar.intro.Loop;
+import com.github.msx80.turnsofwar.intro.OptionsLoop;
 import com.github.msx80.turnsofwar.ui.Button;
 import com.github.msx80.turnsofwar.ui.Dialog;
 import com.github.msx80.turnsofwar.ui.Tooltip;
@@ -95,10 +96,8 @@ public class TurnsOfWar implements com.github.msx80.omicron.api.Game {
 		TD = new TextDrawerVariable(4, 4, 6, 1);
 		
 		mouse = Sys.pointers()[0];
-		Sys.music(3, 0.5f, false);
-		IntroLoop intro = new IntroLoop();
-		intro.init();
-		currentLoop = intro;
+		
+		currentLoop = new IntroLoop();
 	}
 
 	
@@ -307,9 +306,9 @@ public class TurnsOfWar implements com.github.msx80.omicron.api.Game {
 		TurnsOfWar.TD.print("Turn "+Game.turnCount, 190, 111);
 		Sys.color(Colors.WHITE);
 		
-		Game.button(190,118,"Restart", "Restart current level.", () -> {
-			  Game.makeGame(Game.lvlNum);
-			  return;
+		Game.button(190,118,"Options", "Open options menu.", () -> {
+			currentLoop = new OptionsLoop();
+			return;
 		});
 		
 		if (Game.anim == null && Game.dialog == null && Game.targets != null) {
@@ -411,6 +410,10 @@ public class TurnsOfWar implements com.github.msx80.omicron.api.Game {
 	public static void startLevel(int lev) {
 		com.github.msx80.turnsofwar.game.Game.makeGame(lev);
 		TurnsOfWar.mapDrawer = new MapDrawer(16, 16, 8, com.github.msx80.turnsofwar.game.Game.map);
+		currentLoop = TurnsOfWar::gameTIC;
+	}
+
+	public static void resumeGame() {
 		currentLoop = TurnsOfWar::gameTIC;
 	}
 
