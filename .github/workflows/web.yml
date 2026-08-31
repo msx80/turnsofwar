@@ -23,6 +23,10 @@ jobs:
       run: |
         cd turnsofwar
         mvn --batch-mode clean install package
+    - name: Read version
+      run: |
+        cd turnsofwar
+        echo "GITHUB_DDVER=$(mvn -q org.apache.maven.plugins:maven-help-plugin:3.1.1:evaluate -Dexpression=project.version -DforceStdout)" >> $GITHUB_ENV
     - uses: actions/checkout@master
       name: omicron version with web working
       with:
@@ -34,4 +38,9 @@ jobs:
         cd omicronweb
         cd omicron-player
         mvn --batch-mode clean install package
-        
+    - name: Build Web app
+      run: |
+        cd omicronweb
+        cd wrappers
+        cd web-wrapper
+        mvn --batch-mode -Dcartridge.artifactId=turnsofwar -Dcartridge.groupId=com.github.msx80.omicron -Dcartridge.version=$GITHUB_DDVER clean package        
