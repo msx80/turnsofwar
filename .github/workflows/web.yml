@@ -1,0 +1,35 @@
+name: Web build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: 'false'
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: 17
+        distribution: 'temurin'
+    - name: Build app
+      run: |
+        cd turnsofwar
+        mvn --batch-mode clean install package
+    - uses: actions/checkout@master
+      with:
+        name: msx80/Omicron
+        ref: bbdff15dd28bf4bd9e1a69f35bfc030475a2fc39
+    - name: Build Omicron
+      run: |
+        cd Omicron
+        cd omicron-player
+        mvn --batch-mode clean install package
+        
