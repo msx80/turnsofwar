@@ -5,11 +5,14 @@
 ![GitHub Discussions](https://img.shields.io/github/discussions/msx80/turnsofwar)
 [![Powered by Omicron](https://img.shields.io/badge/Powered_by-Omicron-Green)](https://github.com/msx80/Omicron)
 
+# Turns Of War
+
 [<img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Get_it_on_F-Droid_%28material_design%29.svg"
      alt="Get it on F-Droid"
      height="80">](https://f-droid.org/packages/com.github.msx80.turnsofwar/)
 [<img height='80' alt='Get it on Flathub' src='https://flathub.org/api/badge?svg&locale=en'/>](https://flathub.org/apps/io.github.msx80.turnsofwar)
-# Turns Of War
+[<img height='80' alt='Play in your browser' src='https://cdn.prod.website-files.com/62f10984b7ece0cd68b339a1/634414e97c8fd43650e0f799_play-in-browser.svg'/>](https://msx80.github.io/turnsofwar/)
+
 
 *A pixel art styled turn based strategy game!*
 
