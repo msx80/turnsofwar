@@ -24,12 +24,14 @@ jobs:
         cd turnsofwar
         mvn --batch-mode clean install package
     - uses: actions/checkout@master
+      name: omicron version with web working
       with:
-        name: msx80/Omicron
+        repository: msx80/Omicron
         ref: bbdff15dd28bf4bd9e1a69f35bfc030475a2fc39
+        path: omicronweb
     - name: Build Omicron
       run: |
-        cd Omicron
+        cd omicronweb
         cd omicron-player
         mvn --batch-mode clean install package
         
