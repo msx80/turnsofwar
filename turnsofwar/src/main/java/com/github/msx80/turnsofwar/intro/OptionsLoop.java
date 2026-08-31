@@ -53,7 +53,7 @@ public class OptionsLoop implements Loop {
 		{
 		Button b = new AButton("Quit Game", eb -> {
 			
-			System.exit(0);
+			Sys.hardware("com.github.msx80.omicron.plugins.builtin.PlatformPlugin", "QUIT", null);
 			
 		});
 		wm.add(b, x, y); y+=dist;
