@@ -44,3 +44,9 @@ jobs:
         cd wrappers
         cd web-wrapper
         mvn --batch-mode -Dcartridge.artifactId=turnsofwar -Dcartridge.groupId=com.github.msx80.omicron -Dcartridge.version=$GITHUB_DDVER clean package        
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./omicronweb/wrappers/web-wrapper/target/web/dist/webapp
+        publish_branch: pages
